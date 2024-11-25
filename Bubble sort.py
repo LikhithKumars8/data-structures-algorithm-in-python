@@ -21,3 +21,24 @@ def bubble_sort(list_data):
             break
 
     return list_data
+
+# More optimised bubble sort 
+def bubble_sort(list_data):
+    """
+    Optimized Bubble Sort implementation
+    """
+    n = len(list_data)
+    for i in range(n - 1):
+        swaped = False
+        # Last i elements are already sorted, so we don't need to compare them
+        for j in range(n - 1 - i): 
+            if list_data[j] > list_data[j + 1]:
+                # Swap the elements if they are in the wrong order
+                list_data[j], list_data[j + 1] = list_data[j + 1], list_data[j]
+                swaped = True
+        
+        # If no elements were swapped, the list is sorted
+        if not swaped:
+            break
+        
+    return list_data
